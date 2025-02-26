@@ -7,7 +7,7 @@ from aiogram.client.default import DefaultBotProperties
 
 from configs.config import Config, load_config
 from keyboards.set_menu import set_main_menu
-from handlers.set_menu import router_set_menu
+from handlers.set_menu_handlers import router_set_menu
 
 logger = logging.getLogger()
 logging.basicConfig(level='INFO')
