@@ -7,6 +7,7 @@ from aiogram.client.default import DefaultBotProperties
 
 from configs.config import Config, load_config
 from keyboards.set_menu import set_main_menu
+from handlers.set_menu import router_set_menu
 
 logger = logging.getLogger()
 logging.basicConfig(level='INFO')
@@ -17,6 +18,8 @@ async def main():
     bot = Bot(token=config.tg_bot.token,
               default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
+    dp.include_router(router_set_menu)
+
 
     await set_main_menu(bot)
     await dp.start_polling(bot)
